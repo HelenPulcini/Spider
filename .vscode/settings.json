@@ -1,0 +1,9 @@
+{
+    "files.watcherExclude": {
+        "**/target": true
+    },
+    "java.project.referencedLibraries": [
+        "lib/**/*.jar",
+        "jsoup-1.15.3.jar"
+    ]
+}
