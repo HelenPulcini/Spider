@@ -6,9 +6,12 @@ import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.jsoup.Connection;
 
+private String first_link;
+private ArrayList<String> visitedLinks = new ArrayList <String>();
 
-public class WebCrawler {
-    public static void main(String[] args) {
+
+public WebCrawler (String link, int num) {
+        System.out.print("WebCrawler created");
         String url = "https://en.wikipedia.org/";
         crawl(1, url, new ArrayList<String>());
     }
