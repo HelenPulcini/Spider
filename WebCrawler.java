@@ -19,22 +19,24 @@ public class WebCrawler {
             if (doc != null) {
                 for (Element link : doc.select("a[href]")) {
                     String next_link =  link.absUrl("href");
-                    if (visited.contains(next_link) == false) {
-                        crawl(level++, next_link, visited);
+                    if (visitedLinks.contains(next_link) == false) {
+                        crawl(level++, next_link);
                     }
                 }
             }
         }
     }
-    private static Document request(String url, ArrayList<String> v) {
+    private Document request(String url) {
         try {
             Connection con = Jsoup.connect(url);
             Document doc = con.get();
 
             if (con.response().statusCode() == 200) {
-                System.out.println("Link: " + url);
-                System.out.println(doc.title());
-                v.add(url);
+                System.out.println("Bot ID: " + ID + "Reading " + url);
+
+                String title = doc.title();
+                System.out.println(title);
+                visitedLinks.add(url);
 
                 return doc;
             }
