@@ -12,6 +12,8 @@ private ArrayList<String> visitedLinks = new ArrayList <String>();
 
 public WebCrawler (String link, int num) {
         System.out.print("WebCrawler created");
+        String first_link = link;
+        Double ID = num;
         String url = "https://en.wikipedia.org/";
         crawl(1, url, new ArrayList<String>());
     }
